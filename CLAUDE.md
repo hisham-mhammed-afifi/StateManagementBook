@@ -59,11 +59,41 @@ Before writing ANY chapter, you MUST:
 3. Check for breaking changes in Angular 21 / NgRx 21
 4. Note any experimental APIs and label them clearly
 
+## API Stability Labels
+
+When covering experimental or developer-preview APIs, add a callout block immediately after the first mention:
+
+> **API Status: Experimental**
+> This API is marked as `@experimental` in Angular 21.0.0. Core concepts are stable but method signatures may change in future versions.
+
+> **API Status: Developer Preview**
+> This API is available for testing but not recommended for production use.
+
+Stable APIs need no label. Stable is the default assumption.
+
+APIs that currently require labeling:
+- `httpResource` -- Experimental in Angular 21
+- Signal Forms (`@angular/forms` signal-based API) -- Experimental in Angular 21.0.0
+
+## NgRx v21 API Names
+
+- Use `withEventHandlers()` not `withEffects()` (renamed in NgRx v21)
+- Use `eventGroup()` for creating event groups
+- Use `withReducer()` and `on()` for reducer patterns in the Events Plugin
+- Verify all `@ngrx/signals` imports against the installed v21.1.0 package before writing
+- Migration schematics exist for the `withEffects` to `withEventHandlers` rename. Mention this in the Events Plugin chapter.
+
+## Angular 21 Defaults
+
+- Angular 21 is zoneless by default. Do not include `provideZoneChangeDetection()` or `provideZonelessChangeDetection()` unless explicitly discussing zone.js compatibility or migration.
+- Do not reference `NgZone` or `zone.js` unless in a legacy/migration context.
+- `OnPush` change detection strategy is effectively the default behavior in zoneless mode. Mention this when discussing performance but do not prescribe `OnPush` as an optimization step.
+
 ## Book Outline Reference
 
 See outline/BOOK_OUTLINE.md for the full structure.
 
 ## File Naming Convention
 
-chapters/part-N/chapter-NN-slug.md
-Example: chapters/part-2/chapter-05-ngrx-classic-store.md
+public/book/part-N/chapter-NN-slug.md
+Example: public/book/part-2/chapter-05-ngrx-classic-store.md

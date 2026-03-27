@@ -90,9 +90,11 @@ What changed:
 
 The book project's `package.json` includes `@ngrx/operators: ^21.1.0`. This package was introduced in NgRx v19+ and provides RxJS operator utilities (`concatLatestFrom`, `mapResponse`, `tapResponse`). It is a real package -- no action needed.
 
-Missing from `package.json`:
-- `@ngrx/store-devtools` -- needed for DevTools coverage
-- `@ngrx/component-store` -- needed if ComponentStore migration is covered
+Already present in `package.json`:
+- `@ngrx/store-devtools` -- confirmed at line 38, no action needed
+
+Missing from `package.json` (optional):
+- `@ngrx/component-store` -- needed only if ComponentStore migration examples require a working import
 
 ---
 
@@ -434,12 +436,12 @@ When covering experimental or developer-preview APIs, add a callout block:
 
 ### Must-Fix (Before Writing Any Chapter)
 
-- [ ] Update outline: rename `withEffects` to `withEventHandlers` in Chapter 21 description
-- [ ] Update outline: merge chapters per Section 7 of this review (or decide which merges to accept)
-- [ ] Add API stability labeling guidance to CLAUDE.md
-- [ ] Add `@ngrx/store-devtools` to book project's `package.json`
+- [x] Update outline: rename `withEffects` to `withEventHandlers` in Chapter 21 description
+- [x] Update outline: merge chapters per Section 7 of this review (or decide which merges to accept)
+- [x] Add API stability labeling guidance to CLAUDE.md
+- [x] ~~Add `@ngrx/store-devtools` to book project's `package.json`~~ (already present)
 - [ ] Verify `injectDispatch` API name against `@ngrx/signals` v21.1.0 exports
-- [ ] Add zoneless Angular coverage to outline (either in Performance chapter or new chapter)
+- [x] Add zoneless Angular coverage to outline (expanded Ch 31: Performance and Zoneless Change Detection)
 
 ### Must-Fix (Before Writing Part 6)
 
@@ -449,12 +451,12 @@ When covering experimental or developer-preview APIs, add a callout block:
 
 ### Should-Fix (Before Finishing the Book)
 
-- [ ] Add SSR/hydration chapter to Part 5
-- [ ] Add ComponentStore migration section to migration chapter
-- [ ] Add RxJS operator reference (appendix or section in Effects chapter)
-- [ ] Add alternative library comparison to Decision Framework chapter
-- [ ] Add URL-as-state section to Router Store chapter
-- [ ] Add error state patterns section to State Design Principles chapter
+- [x] Add SSR/hydration chapter to Part 5 (Ch 30: SSR, Hydration, and State Transfer)
+- [x] Add ComponentStore migration section to migration chapter (Ch 22)
+- [x] Add RxJS operator reference (section in Ch 10: Effects)
+- [x] Add alternative library comparison to Decision Framework chapter (Ch 38)
+- [x] Add URL-as-state section to Router Store chapter (Ch 12)
+- [x] Add error state patterns section to State Design Principles chapter (Ch 23)
 
 ### Nice-to-Have
 
