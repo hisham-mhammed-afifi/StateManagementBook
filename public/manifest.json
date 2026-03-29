@@ -1,0 +1,20 @@
+{
+  "parts": [
+    {
+      "name": "part-1",
+      "title": "Part 1: Foundations of State",
+      "chapters": [
+        {
+          "path": "book/part-1/chapter-01-what-is-state",
+          "file": "book/part-1/chapter-01-what-is-state.md",
+          "title": "Chapter 1: What Is State?"
+        },
+        {
+          "path": "book/part-1/chapter-02-the-mental-model",
+          "file": "book/part-1/chapter-02-the-mental-model.md",
+          "title": "Chapter 2: The Mental Model"
+        }
+      ]
+    }
+  ]
+}
